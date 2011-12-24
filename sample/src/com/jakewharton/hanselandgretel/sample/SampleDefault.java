@@ -36,7 +36,7 @@ public class SampleDefault extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_stack);
-        
+
         //Associate bread crumbs
         FragmentBreadCrumbs crumbs = (FragmentBreadCrumbs)findViewById(R.id.breadcrumbs);
         crumbs.setActivity(this);
