@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jakewharton.hanselandgretel.sample"
+    android:versionCode="1"
+    android:versionName="1.0.0">
+
+    <uses-sdk android:minSdkVersion="4" />
+
+    <application
+        android:label="Hansel and Gretel Sample"
+        android:icon="@drawable/icon">
+
+        <activity
+            android:name=".ListSamples"
+            android:label="Hansel and Gretel">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".SampleDefault"
+            android:label="Default">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.jakewharton.hanselandgretel.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+    </application>
+</manifest>

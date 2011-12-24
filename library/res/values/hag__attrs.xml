@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<declare-styleable name="FragmentBreadCrumb">
+		<attr name="dividerVertical" format="reference" />
+		<attr name="selectableItemBackground" format="reference" />
+	</declare-styleable>
+</resources>

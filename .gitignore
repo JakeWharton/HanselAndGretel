@@ -1,0 +1,21 @@
+#Android generated
+bin
+gen
+
+#Eclipse
+.project
+.classpath
+.settings
+
+#IntelliJ IDEA
+.idea
+*.iml
+*.ipl
+
+#Maven
+target
+release.properties
+pom.xml.*
+
+#OS X
+.DS_Store

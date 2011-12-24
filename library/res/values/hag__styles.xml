@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<style name="Widget.HanselAndGretel.FragmentBreadCrumb" parent="android:Widget">
+		<item name="android:padding">4dp</item>
+	</style>
+</resources>
