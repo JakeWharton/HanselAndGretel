@@ -8,7 +8,7 @@ Android library providing bread crumbs for compatibility fragments.
 Usage
 =====
 
-*For a working implementation of this project see the `sample/` folder.
+*For a working implementation of this project see the `sample/` folder.*
 
  1. Include the widget in your view. This should usually be placed directly
     above the container in which the associated fragments will be displayed.
