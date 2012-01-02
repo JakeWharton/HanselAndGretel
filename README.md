@@ -42,6 +42,40 @@ Usage
         crumbs.setTitle("Settings", null);
 
 
+Including In Your Project
+-------------------------
+
+The HanselAndGretel library is presented as an [Android library project][7]. A
+standalone JAR is not possible due to the theming capabilities offered by the
+widget.
+
+You can include this project by [referencing it as a library project][8] in
+Eclipse or ant.
+
+If you are a Maven user you can easily include the library by specifying it as
+a dependency:
+
+    <dependency>
+      <groupId>com.jakewharton</groupId>
+      <artifactId>hanselandgretel</artifactId>
+      <version>1.0.0</version>
+      <type>apklib</type>
+    </dependency>
+
+You must also include the following repository:
+
+    <repository>
+      <id>com.jakewharton</id>
+      <url>http://r.jakewharton.com/maven/release</url>
+    </repository>
+
+
+
+This project depends on the `Fragment` classes which are available in the
+[Android Compatibility Library][2] or [ActionBarSherlock][3]. Details for
+including one of those libraries is available on their respecitve web sites.
+
+
 
 Developed By
 ============
