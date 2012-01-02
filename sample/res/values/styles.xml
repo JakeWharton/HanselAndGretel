@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="Theme.HanselAndGretel.DefaultDark" parent="android:Theme.Black">
+        <item name="hagDividerVertical">@drawable/hag__divider_dark</item>
+        <item name="hagSelectableItemBackground">@drawable/hag__background_dark</item>
+    </style>
+    
+    <style name="Theme.HanselAndGretel.DefaultLight" parent="android:Theme.Light">
+        <item name="hagDividerVertical">@drawable/hag__divider_light</item>
+        <item name="hagSelectableItemBackground">@drawable/hag__background_light</item>
+    </style>
+
+	<style name="Theme.HanselAndGretel.CustomStyle" parent="android:Theme.Black">
+	    <item name="hagDividerVertical">@drawable/themed_divider</item>
+	    <item name="hagSelectableItemBackground">@drawable/themed_item_background</item>
+	</style>
+</resources>

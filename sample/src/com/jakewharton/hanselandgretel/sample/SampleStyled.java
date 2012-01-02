@@ -30,13 +30,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class SampleDefault extends FragmentActivity {
+public class SampleStyled extends FragmentActivity {
     int mStackLevel = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_stack);
+        setContentView(R.layout.sample_styled);
 
         //Associate bread crumbs
         FragmentBreadCrumbs crumbs = (FragmentBreadCrumbs)findViewById(R.id.breadcrumbs);

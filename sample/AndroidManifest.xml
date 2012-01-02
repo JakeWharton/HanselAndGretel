@@ -4,7 +4,9 @@
     android:versionCode="1"
     android:versionName="1.0.0">
 
-    <uses-sdk android:minSdkVersion="4" />
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="15" />
 
     <application
         android:label="Hansel and Gretel Sample"
@@ -20,9 +22,32 @@
             </intent-filter>
         </activity>
         
+        
+        
         <activity
-            android:name=".SampleDefault"
-            android:label="Default">
+            android:name=".SampleDefaultDark"
+            android:label="Default (Dark)"
+            android:theme="@style/Theme.HanselAndGretel.DefaultDark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.jakewharton.hanselandgretel.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".SampleDefaultLight"
+            android:label="Default (Light)"
+            android:theme="@style/Theme.HanselAndGretel.DefaultLight">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.jakewharton.hanselandgretel.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".SampleStyled"
+            android:label="Styled"
+            android:theme="@style/Theme.HanselAndGretel.CustomStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.jakewharton.hanselandgretel.SAMPLE" />

@@ -3,7 +3,43 @@ Hansel And Gretel
 
 Android library providing bread crumbs for compatibility fragments.
 
-*More to come*
+
+
+Usage
+=====
+
+*For a working implementation of this project see the `sample/` folder.
+
+ 1. Include the widget in your view. This should usually be placed directly
+    above the container in which the associated fragments will be displayed.
+    
+        <android.support.v4.app.FragmentBreadCrumbs
+            android:id="@+id/breadcrumbs"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp" />
+    
+ 2. In your `onCreate` method, bind the widget to the activity.
+    
+        FragmentBreadCrumbs crumbs = (FragmentBreadCrumbs)findViewById(R.id.breadcrumbs);
+        crumbs.setActivity(this);
+    
+ 3. Add the required style attributes to your theme.
+    
+        <item name="hagDividerVertical">@drawable/hag__divider_dark</item>
+        <item name="hagSelectableItemBackground">@drawable/hag__background_dark</item>
+    
+    or
+    
+        <item name="hagDividerVertical">@drawable/hag__divider_dark</item>
+        <item name="hagSelectableItemBackground">@drawable/hag__background_dark</item>
+    
+    or specify your own drawables for the divider and background.
+    
+ 4. *(Optional)* Set the title of the initial view. This can be useful when the
+    initial activity view has a default fragment.
+    
+        //continued from above
+        crumbs.setTitle("Settings", null);
 
 
 

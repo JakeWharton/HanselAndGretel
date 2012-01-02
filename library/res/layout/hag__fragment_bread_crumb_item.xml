@@ -20,7 +20,7 @@
         >
     <ImageView
             android:id="@android:id/icon"
-            android:src="@drawable/hag__divider"
+            android:src="?attr/hagDividerVertical"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:scaleType="fitXY"
@@ -36,5 +36,6 @@
             android:paddingRight="8dip"
             android:gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="?attr/hagSelectableItemBackground"
             />
 </LinearLayout>

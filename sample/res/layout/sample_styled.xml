@@ -26,7 +26,8 @@
     <android.support.v4.app.FragmentBreadCrumbs
         android:id="@+id/breadcrumbs"
         android:layout_width="fill_parent"
-        android:layout_height="25dp" />
+        android:layout_height="40dp"
+        android:background="#ff663333" />
 
     <FrameLayout
             android:id="@+id/simple_fragment"
