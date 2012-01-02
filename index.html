@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="description" content="Android library providing fragment bread crumbs to the Android Compatibility Library and ActionBarSherlock.">
+
+		<title>HanselAndGretel</title>
+
+		<!-- IE Fix for HTML5 Tags -->
+		<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="js/google-code-prettify/prettify.css">
+		<style type="text/css">
+			html, body {
+				background: #eee url('cubes.png') repeat;
+			}
+			section {
+				padding-top: 70px;
+				padding-bottom: 30px;
+			}
+			.navbar-inner, .nav .dropdown-menu {
+				background: #222 url('green-fibers.png') repeat;
+				top: 41px;
+			}
+			.screens {
+				text-align: center;
+				margin-top: 2em;
+			}
+			h2 {
+				margin-bottom: 0.5em;
+			}
+			.nav .dropdown-menu li a:hover {
+				background: transparent;
+			}
+			ol li {
+				margin-bottom: 20px;
+			}
+			pre {
+				margin: 10px 0;
+			}
+			#logo {
+				margin-bottom: -40px;
+			}
+			.app {
+				padding: 20px 0;
+				clear: left;
+			}
+			.app .icon {
+				float: left;
+				padding-bottom: 20px;
+			}
+			.app .desc {
+				margin-left: 95px;
+			}
+			#missing {
+				margin: 1em 2em;
+				padding: 1em;
+				border: 1px solid #aaa;
+				border-radius: 5px;
+			}
+			td.indicator {
+				width: 320px;
+			}
+			.image-table {
+				margin-top: 18px;
+			}
+			.image-table td {
+				padding: 15px;
+			}
+			div.well.dl {
+				background-color: rgba(200, 200, 200, 0.2);
+				margin: 1em;
+			}
+			p.h1 {
+				font-size: 14px;
+				font-weight: normal;
+				margin-bottom: 15px;
+			}
+			p.h2 {
+				margin-top: 25px;
+				margin-bottom: 10px;
+			}
+			#forkme {
+				position: fixed;
+				top: 40px;
+				right: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-fixed">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">HanselAndGretel</a>
+					<ul class="nav secondary-nav">
+						<li><a href="#introduction">Introduction</a></li>
+						<li><a href="#download">Download</a></li>
+						<li><a href="#usage">Usage</a></li>
+						<li><a href="#implementations">Implementations</a></li>
+						<li><a href="#credits">Credits</a></li>
+						<li class="divider"></li>
+						<li class="dropdown">
+							<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>More Libraries</strong></a>
+							<ul class="dropdown-menu">
+								<li><a href="http://actionbarsherlock.com/">ActionBarSherlock</a></li>
+								<li><a href="http://viewpagerindicator.com/">ViewPagerIndicator</a></li>
+								<li><a href="https://github.com/JakeWharton/NineOldAndroids/">NineOldAndroids</a></li>
+								<li><a href="https://github.com/JakeWharton/Android-DirectionalViewPager/">DirectionalViewPager</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<section id="introduction">
+				<div class="row">
+					<div class="span12">
+						<h2>Introduction</h2>
+						<p>Android library providing fragment bread crumbs to the <a href="http://developer.android.com/sdk/compatibility-library.html">Android Compatibility Library</a> and <a href="http://actionbarsherlock.com/">ActionBarSherlock</a>.</p>
+						<p>When using fragments it is not always obvious to the user that there are multiple fragments on the back stack. By implementing this widget you provide a clear indicator that there exists additional content which they can go back to through the back button or by pressing one of the titles.</p>
+						<p>There are two styles included by default in the library, one dark and one light. You can easily provide your own styling, however.</p>
+						<p class="screens"><img src="screens.png" alt=""/></p>
+					</div>
+					<!--div class="span4"><img src="web.png"></div-->
+				</div>
+			</section>
+
+			<section id="download">
+				<div class="row">
+					<div class="span12"><h2>Download</h2></div>
+					<div class="span8">
+						<p class="h1"><strong>Version 1.0.0</strong> &mdash; 2012-01-01</p>
+						<p><a href="https://github.com/JakeWharton/HanselAndGretel/zipball/master" class="btn small success">Download ZIP</a> <a href="https://github.com/JakeWharton/HanselAndGretel/tarball/master" class="btn small success">Download TGZ</a></p>
+						<p class="h2">Change Log</p>
+						<ul>
+							<li>Initial version.</li>
+						</ul>
+						<p>Looking for an older version? Check <a href="https://github.com/JakeWharton/HanselAndGretel/tags">here</a>.</p>
+					</div>
+					<div class="span4">
+						<p>Try out the sample application: <a href="https://market.android.com/details?id=com.jakewharton.hanselandgretel.sample"><img src="marketqr.png" alt="Download from the Android Market"></a></p>
+					</div>
+				</div>
+			</section>
+
+			<section id="usage">
+				<div class="row">
+					<div class="span12">
+						<h2>Usage</h2>
+						<ol>
+							<li>
+								<span>Include the widget in your view. This should usually be placed directly above the container in which the associated fragments will be displayed.</span>
+								<pre class="prettyprint">&lt;android.support.v4.app.FragmentBreadCrumbs
+    android:id="@+id/breadcrumbs"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp" /></pre>
+							</li>
+							<li>
+								<span>In your <code>onCreate</code> method, bind the widget to the activity.</span>
+								<pre class="prettyprint">FragmentBreadCrumbs crumbs = (FragmentBreadCrumbs)findViewById(R.id.breadcrumbs);
+crumbs.setActivity(this);</pre>
+							</li>
+							<li>
+								<span>Add the required style attributes to your theme.</span>
+								<pre class="prettyprint">&lt;item name="hagDividerVertical">@drawable/hag__divider_dark&lt;/item>
+&lt;item name="hagSelectableItemBackground">@drawable/hag__background_dark&lt;/item></pre>
+								<span>or</span>
+								<pre class="prettyprint">&lt;item name="hagDividerVertical">@drawable/hag__divider_dark&lt;/item>
+&lt;item name="hagSelectableItemBackground">@drawable/hag__background_dark&lt;/item></pre>
+								<span>or specify your own drawables for the divider and background.</span>
+							<li>
+								<span>(<em>Optional</em>) Set the title of the initial view. This can be useful when the initial activity view has a default fragment.</span>
+								<pre class="prettyprint">//continued from above
+crumbs.setTitle("Settings", null);</pre>
+							</li>
+						</ol>
+						<p><strong>For more examples please take a look at the <a href="https://github.com/JakeWharton/HanselAndGretel/tree/master/sample">source code to the samples</a>.</strong></p>
+					</div>
+				</div>
+			</section>
+
+			<section id="implementations">
+				<div class="row">
+					<div class="span12"><h2>Implementations</h2></div>
+					<div class="span8">
+						<!--
+
+						LOOKING TO ADD YOUR OWN APP?
+
+						1. Search for your app on the market. On the search results page,
+						   right click the icon and save it in the `apps/` folder. DO NOT
+						   use the icon from the app summary page as it is too large. You
+						   should name it using your apps package name followed by
+						   '-logo.png' (e.g., "com.jakewharton.coolapp-logo.png")
+
+						2.
+
+						<div class="app">
+							<img class="icon" src="apps/YOUR.PACKAGE.NAME-logo.png">
+							<div class="desc">
+								<h4>YOUR APP NAME</h4>
+								<p>SHORT DESCRIPTION OF APP</p>
+							</div>
+						</div>
+
+						-->
+
+						<p>None! Be the first!</p>
+					</div>
+					<div class="span4">
+						<div id="missing">
+							<p><strong>Is your app missing?</strong></p>
+							<p>Contact <a href="mailto:jakewharton@gmail.com">Jake Wharton</a> or <a href="https://github.com/JakeWharton/HanselAndGretel">fork the project</a>, update this page, and send a pull request!</p>
+							<p><em>Hint: It's in the <code>gh-pages</code> branch.</em></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="credits">
+				<div class="row">
+					<div class="span12">
+						<h2>Credits</h2>
+						<p>&copy; 2011 Jake Wharton &mdash; <a href="http://twitter.com/JakeWharton">@JakeWharton</a> &middot; <a href="http://profiles.google.com/jakewharton">+JakeWharton</a></p>
+						<p>Developed and distributed under the Apache License, Version 2.0.</p>
+						<p><a href="http://github.com/JakeWharton/HanselAndGretel/" id="forkme"><img src="forkme.png" alt="Fork this project on GitHub"/></a></p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+		<script src="js/bootstrap-dropdown.js"></script>
+		<script src="js/google-code-prettify/prettify.js"></script>
+		<script>
+			$(function () {
+				prettyPrint();
+
+				var $window = $(window);
+				var element = $('#missing');
+				var marginTop = 70; //pixels
+				var offset = element.offset().top - marginTop;
+				var width = element.width();
+				$window.scroll(function() {
+					if ($window.scrollTop() > offset) {
+						element.css({
+							top: marginTop,
+							position: 'fixed',
+							width: width
+						});
+					} else {
+						element.css({
+							top: '',
+							position: '',
+							width: ''
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
