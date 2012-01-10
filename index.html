@@ -240,27 +240,6 @@ crumbs.setTitle("Settings", null);</pre>
 		<script>
 			$(function () {
 				prettyPrint();
-
-				var $window = $(window);
-				var element = $('#missing');
-				var marginTop = 70; //pixels
-				var offset = element.offset().top - marginTop;
-				var width = element.width();
-				$window.scroll(function() {
-					if ($window.scrollTop() > offset) {
-						element.css({
-							top: marginTop,
-							position: 'fixed',
-							width: width
-						});
-					} else {
-						element.css({
-							top: '',
-							position: '',
-							width: ''
-						});
-					}
-				});
 			});
 		</script>
 	</body>
