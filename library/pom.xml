@@ -17,14 +17,14 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>android</groupId>
+			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>android.support</groupId>
-			<artifactId>compatibility-v4</artifactId>
+			<groupId>com.google.android</groupId>
+			<artifactId>support-v4</artifactId>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -35,7 +35,7 @@
 		<plugins>
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
-				<artifactId>maven-android-plugin</artifactId>
+				<artifactId>android-maven-plugin</artifactId>
 				<extensions>true</extensions>
 			</plugin>
 
