@@ -12,7 +12,7 @@
 	<groupId>com.jakewharton</groupId>
 	<artifactId>hanselandgretel-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 
 	<name>Hansel And Gretel (Parent)</name>
 	<description>Android library providing bread crumbs for compatibility fragments.</description>
