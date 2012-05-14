@@ -45,11 +45,11 @@ Usage
 Including In Your Project
 -------------------------
 
-The HanselAndGretel library is presented as an [Android library project][7]. A
+The HanselAndGretel library is presented as an Android library project. A
 standalone JAR is not possible due to the theming capabilities offered by the
 widget.
 
-You can include this project by [referencing it as a library project][8] in
+You can include this project by [referencing it as a library project[1] in
 Eclipse or ant.
 
 If you are a Maven user you can easily include the library by specifying it as
@@ -58,22 +58,12 @@ a dependency:
     <dependency>
       <groupId>com.jakewharton</groupId>
       <artifactId>hanselandgretel</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>apklib</type>
     </dependency>
 
-You must also include the following repository:
-
-    <repository>
-      <id>com.jakewharton</id>
-      <url>http://r.jakewharton.com/maven/release</url>
-    </repository>
-
-
-
 This project depends on the `Fragment` classes which are available in the
-[Android Compatibility Library][2] or [ActionBarSherlock][3]. Details for
-including one of those libraries is available on their respecitve web sites.
+[Android Support Library][2].
 
 
 
@@ -101,3 +91,7 @@ License
     See the License for the specific language governing permissions and
     limitations under the License.
 
+
+
+ [1]: http://developer.android.com/guide/developing/projects/projects-eclipse.html#ReferencingLibraryProject
+ [2]: http://developer.android.com/sdk/compatibility-library.html
