@@ -51,12 +51,12 @@ public class FragmentBreadCrumbs extends ViewGroup
     }
 
     //XXX As per View
-    private static int combineMeasuredStates(int curState, int newState) {
+    public static int combineMeasuredStates(int curState, int newState) {
         return curState | newState;
     }
 
     //XXX As per View
-    private static int resolveSizeAndState(int size, int measureSpec, int childMeasuredState) {
+    public static int resolveSizeAndState(int size, int measureSpec, int childMeasuredState) {
         int result = size;
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize =  MeasureSpec.getSize(measureSpec);
