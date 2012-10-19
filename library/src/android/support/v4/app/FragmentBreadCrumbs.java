@@ -123,19 +123,34 @@ public class FragmentBreadCrumbs extends ViewGroup
         super(context, attrs, defStyle);
     }
 
+	@Override
+	protected void onAttachedToWindow() {
+		super.onAttachedToWindow();
+
+		if (getContext() instanceof FragmentActivity) {
+			setActivity((FragmentActivity) getContext());
+		} else {
+			throw new IllegalStateException("FragmentBreadCrumbs can be used only in FragmentActivity");
+		}
+	}
+
     /**
      * Attach the bread crumbs to their activity.  This must be called once
      * when creating the bread crumbs.
+     *
+     * @deprecated It will be called automatically now when this will be attached to the window
      */
     public void setActivity(FragmentActivity a) {
         mActivity = a;
-        mInflater = (LayoutInflater)a.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mContainer = (LinearLayout)mInflater.inflate(
-                R.layout.hag__fragment_bread_crumbs,
-                this, false);
-        addView(mContainer);
-        a.getSupportFragmentManager().addOnBackStackChangedListener(this);
-        updateCrumbs();
+	    if (mContainer == null) {
+	        mInflater = (LayoutInflater)a.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	        mContainer = (LinearLayout)mInflater.inflate(
+	                R.layout.hag__fragment_bread_crumbs,
+	                this, false);
+	        addView(mContainer);
+	        a.getSupportFragmentManager().addOnBackStackChangedListener(this);
+	        updateCrumbs();
+	    }
     }
 
     /**
