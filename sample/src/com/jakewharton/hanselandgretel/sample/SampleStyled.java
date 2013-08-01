@@ -40,7 +40,7 @@ public class SampleStyled extends FragmentActivity {
 
         //Associate bread crumbs
         FragmentBreadCrumbs crumbs = (FragmentBreadCrumbs)findViewById(R.id.breadcrumbs);
-        crumbs.setActivity(this);
+        crumbs.setFragmentManager(getSupportFragmentManager());
         crumbs.setTitle("Base", null);
 
         // Watch for button clicks.
