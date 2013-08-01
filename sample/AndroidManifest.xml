@@ -54,5 +54,15 @@
             </intent-filter>
         </activity>
         
+        <activity
+            android:name=".SampleNestedFragmentsDefaultDark"
+            android:label="Nested Fragments - Default (Dark)"
+            android:theme="@style/Theme.HanselAndGretel.DefaultDark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.jakewharton.hanselandgretel.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
     </application>
 </manifest>

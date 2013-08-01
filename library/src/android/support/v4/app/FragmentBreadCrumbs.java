@@ -78,8 +78,7 @@ public class FragmentBreadCrumbs extends ViewGroup
         return result | (childMeasuredState&MEASURED_STATE_MASK);
     }
 
-
-    FragmentActivity mActivity;
+    FragmentManager mFragmentManager;
     LayoutInflater mInflater;
     LinearLayout mContainer;
     int mMaxVisible = -1;
@@ -127,14 +126,14 @@ public class FragmentBreadCrumbs extends ViewGroup
      * Attach the bread crumbs to their activity.  This must be called once
      * when creating the bread crumbs.
      */
-    public void setActivity(FragmentActivity a) {
-        mActivity = a;
-        mInflater = (LayoutInflater)a.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public void setFragmentManager(FragmentManager fragmentManager) {
+        mInflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mFragmentManager = fragmentManager;
         mContainer = (LinearLayout)mInflater.inflate(
                 R.layout.hag__fragment_bread_crumbs,
                 this, false);
         addView(mContainer);
-        a.getSupportFragmentManager().addOnBackStackChangedListener(this);
+        mFragmentManager.addOnBackStackChangedListener(this);
         updateCrumbs();
     }
 
@@ -180,8 +179,7 @@ public class FragmentBreadCrumbs extends ViewGroup
     private BackStackRecord createBackStackEntry(CharSequence title, CharSequence shortTitle) {
         if (title == null) return null;
 
-        final BackStackRecord entry = new BackStackRecord(
-                (FragmentManagerImpl) mActivity.getSupportFragmentManager());
+        final BackStackRecord entry = new BackStackRecord((FragmentManagerImpl) mFragmentManager);
         entry.setBreadCrumbTitle(title);
         entry.setBreadCrumbShortTitle(shortTitle);
         return entry;
@@ -282,14 +280,13 @@ public class FragmentBreadCrumbs extends ViewGroup
     }
 
     void updateCrumbs() {
-        FragmentManager fm = mActivity.getSupportFragmentManager();
-        int numEntries = fm.getBackStackEntryCount();
+        int numEntries = mFragmentManager.getBackStackEntryCount();
         int numPreEntries = getPreEntryCount();
         int numViews = mContainer.getChildCount();
         for (int i = 0; i < numEntries + numPreEntries; i++) {
             BackStackEntry bse = i < numPreEntries
                     ? getPreEntry(i)
-                    : fm.getBackStackEntryAt(i - numPreEntries);
+                    : mFragmentManager.getBackStackEntryAt(i - numPreEntries);
             if (i < numViews) {
                 View v = mContainer.getChildAt(i);
                 Object tag = v.getTag();
@@ -353,9 +350,9 @@ public class FragmentBreadCrumbs extends ViewGroup
                     }
                     if (bse == mTopEntry) {
                         // Pop everything off the back stack.
-                        mActivity.getSupportFragmentManager().popBackStack();
+                        mFragmentManager.popBackStack();
                     } else {
-                        mActivity.getSupportFragmentManager().popBackStack(bse.getId(), 0);
+                        mFragmentManager.popBackStack(bse.getId(), 0);
                     }
                 }
             }
