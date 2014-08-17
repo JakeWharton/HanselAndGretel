@@ -23,11 +23,16 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     
-    <android.support.v4.app.FragmentBreadCrumbs
-        android:id="@+id/breadcrumbs"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:background="#ff663333" />
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical" >
+
+        <android.support.v4.app.FragmentBreadCrumbs
+            android:id="@+id/breadcrumbs"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp" />
+    </HorizontalScrollView>
 
     <FrameLayout
             android:id="@+id/simple_fragment"
